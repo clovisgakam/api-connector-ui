@@ -2,8 +2,16 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false
+  production: false,
+  consent: '/api/consent/188300000',
+  execute: '/api/execute/1111111',
+  login: '/api/login',
+  payment: '/api/payment/1192992993',
+  validate: '/api/validate',
+  logout: '/api/logout'
+
 };
 
 /*

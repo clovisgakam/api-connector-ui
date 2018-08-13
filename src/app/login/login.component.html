@@ -1,0 +1,24 @@
+
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="anticon anticon-user">
+            <input [(ngModel)]="loginRequest.userId" type="text" nz-input formControlName="userId" placeholder="userId">
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('userId').dirty && validateForm.get('userId').errors">Please input your userId!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="anticon anticon-lock">
+            <input [(ngModel)]="loginRequest.pin" type="password" nz-input formControlName="pin" placeholder="Pin">
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('pin').dirty && validateForm.get('pin').errors">Please input your pin!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button [nzLoading]="isLoading"  [disabled]="validateForm.get('userId').errors || validateForm.get('pin').errors " class="login-form-button" [nzType]="'primary'"><i class="anticon anticon-poweroff"></i>Log in</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>

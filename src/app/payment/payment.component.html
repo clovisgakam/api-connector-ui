@@ -1,0 +1,16 @@
+
+<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group nzPrefixIcon="anticon anticon-lock">
+        <input [(ngModel)]="tan" type="password" nz-input formControlName="tan" placeholder="Tan:">
+      </nz-input-group>
+      <nz-form-explain *ngIf="validateForm.get('tan').dirty && validateForm.get('tan').errors">Please input your Tan!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary" (click)="execute()" [nzLoading]="isLoading"><i class="anticon anticon-poweroff"></i>Execute</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

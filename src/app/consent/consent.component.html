@@ -1,0 +1,37 @@
+<div style="margin-bottom: 3%;">
+  <h1 style="text-align: center;">your consent for this transaction ?</h1>
+</div>
+
+<nz-card>
+  <div>
+    <nz-table #basicTable [nzShowPagination]="false" [nzData]="dataSet">
+      <thead>
+      <tr>
+        <th>DebtorIban</th>
+        <th>Creditor Iban</th>
+        <th>Creditor Name</th>
+        <th>Amount</th>
+        <th>Currency</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{data.debtorIban}}</td>
+        <td>{{data.creditorIban}}</td>
+        <td>{{data.creditorName}}</td>
+        <td>{{data.amount}}</td>
+        <td>{{data.currency}}</td>
+        <td>
+          <nz-divider nzType="vertical"></nz-divider>
+
+          <button  style="right: 10px;" nz-button nzType="danger" nzShape="circle"><i
+            class="anticon anticon-close-circle"></i></button>
+          <button  [nzLoading]="isLoading" (click)="saveConsent(true)" nz-button nzType="primary" nzShape="circle"><i
+            class="anticon anticon-check-circle-o"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</nz-card>
